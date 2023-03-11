@@ -14,4 +14,4 @@
       copy:
         src: /home/rocky/k9s
         dest: /home/rocky/k9scopy
-        
+        mode: '0755'
