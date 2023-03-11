@@ -2,6 +2,6 @@
 - name: "Download version chosen"
   tasks:
     - name: "Download the tarball"
-    get_url:
-      url: "https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz"
-      dest: /home/rocky
+      get_url:
+        url: "https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz"
+        dest: /home/rocky
