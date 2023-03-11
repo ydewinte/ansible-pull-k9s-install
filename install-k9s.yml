@@ -5,13 +5,14 @@
     - name: "Download the tarball"
       get_url:
         url: "https://github.com/derailed/k9s/releases/download/{{version}}/k9s_Linux_amd64.tar.gz"
-        dest: /home/rocky
+        dest: /tmp
     - name: "Unarchive the tarbal"
       unarchive:
-        src: /home/rocky/k9s_Linux_amd64.tar.gz
-        dest: /home/rocky
+        src: /tmp/k9s_Linux_amd64.tar.gz
+        dest: /tmp
     - name: "Copy the binary to /usr/bin"
+      become: yes
       copy:
-        src: /home/rocky/k9s
-        dest: /home/rocky/k9scopy
+        src: /tmp/k9s
+        dest: /usr/sbin
         mode: '0755'
