@@ -6,7 +6,12 @@
       get_url:
         url: "https://github.com/derailed/k9s/releases/download/{{version}}/k9s_Linux_amd64.tar.gz"
         dest: /home/rocky
-    - name: "unpack the tarbal"
+    - name: "Unarchive the tarbal"
       unarchive:
         src: /home/rocky/k9s_Linux_amd64.tar.gz
         dest: /home/rocky
+    - name: "Copy the binary to /usr/bin"
+      copy:
+        src: /home/rocky/k9s
+        dest: /home/rocky/k9scopy
+        
