@@ -1,6 +1,6 @@
 ---
 - name: "Download version chosen"
-  hosts: all
+  hosts: localhost
   tasks:
     - name: "Download the tarball"
       get_url:
