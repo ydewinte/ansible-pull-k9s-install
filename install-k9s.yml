@@ -9,4 +9,4 @@
     - name: "unpack the tarbal"
       unarchive:
         src: /home/rocky/k9s_Linux_amd64.tar.gz
-        dest: /home/rocky/k9sunpacked
+        dest: /home/rocky
