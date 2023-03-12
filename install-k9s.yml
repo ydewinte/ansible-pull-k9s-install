@@ -2,10 +2,18 @@
 - name: "Download and install the k9s version chosen: {{version}}"
   hosts: localhost
   tasks:
-    - name: "Download the tarball"
+    - name: "Download the tarball of a specified version"
       get_url:
         url: "https://github.com/derailed/k9s/releases/download/{{version}}/k9s_Linux_amd64.tar.gz"
         dest: /tmp
+      when:
+        - (version != 'latest')
+    - name: "Download the tarball of the latest version"
+      get_url:
+        url: "https://github.com/derailed/k9s/releases/latest/download/k9s_Linux_amd64.tar.gz"
+        dest: /tmp
+      when:
+        - (version == 'latest')
     - name: "Unarchive the tarbal"
       unarchive:
         src: /tmp/k9s_Linux_amd64.tar.gz
